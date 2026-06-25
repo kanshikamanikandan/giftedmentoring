@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+<title>Student Blog Portfolio</title>
+ 
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+ 
+:root{
+
+    --primary:#7B2FF7;
+
+    --secondary:#A855F7;
+
+    --accent:#C084FC;
+
+    --dark:#12071f;
+
+    --card:#1e1033;
+
+    --light:#f5f3ff;
+
+}
+ 
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    scroll-behavior:smooth;
+
+    font-family:'Poppins',sans-serif;
+
+}
+ 
+body{
+
+    background:linear-gradient(135deg,#12071f,#1b0f2f,#2b124c);
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+ 
+/* ================= HEADER ================= */
+ 
+header{
+
+    position:fixed;
+
+    width:100%;
+
+    top:0;
+
+    z-index:1000;
+
+    backdrop-filter:blur(12px);
+
+    background:rgba(18,7,31,0.75);
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+
+}
+ 
+nav{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 8%;
+
+}
+ 
+.logo{
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+    color:white;
+
+}
+ 
+.logo span{
+
+    color:var(--accent);
+
+}
+ 
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:25px;
+
+}
+ 
+nav a{
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:0.3s;
+
+}
+ 
+nav a:hover{
+
+    color:var(--accent);
+
+}
+ 
+/* ================= HERO ================= */
+ 
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:100px 10%;
+
+    position:relative;
+
+}
+ 
+.hero::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:600px;
+
+    height:600px;
+
+    background:radial-gradient(circle,var(--primary),transparent 70%);
+
+    opacity:.25;
+
+    filter:blur(60px);
+
+}
+ 
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+}
+ 
+.hero h1{
+
+    font-size:4rem;
+
+    line-height:1.2;
+
+    margin-bottom:15px;
+
+}
+ 
+.animated-text{
+
+    display:inline-block;
+
+    color:var(--accent);
+
+    animation:glow 3s infinite alternate;
+
+}
+ 
+@keyframes glow{
+
+    from{
+
+        text-shadow:0 0 10px #c084fc;
+
+    }
+
+    to{
+
+        text-shadow:
+
+        0 0 20px #c084fc,
+
+        0 0 40px #a855f7,
+
+        0 0 60px #7b2ff7;
+
+    }
+
+}
+ 
+.hero p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    opacity:.9;
+
+    font-size:1.1rem;
+
+}
+ 
+.hero-btn{
+
+    margin-top:30px;
+
+    display:inline-block;
+
+    padding:14px 32px;
+
+    background:linear-gradient(45deg,var(--primary),var(--secondary));
+
+    border-radius:50px;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.4s;
+
+}
+ 
+.hero-btn:hover{
+
+    transform:translateY(-4px);
+
+}
+ 
+/* ================= SECTIONS ================= */
+ 
+section{
+
+    padding:90px 10%;
+
+}
+ 
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+ 
+.section-title h2{
+
+    font-size:2.5rem;
+
+    color:var(--accent);
+
+}
+ 
+.section-title p{
+
+    opacity:.8;
+
+}
+ 
+/* ================= ABOUT ================= */
+ 
+.about{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:50px;
+
+    align-items:center;
+
+}
+ 
+.about-card{
+
+    background:rgba(255,255,255,.05);
+
+    padding:35px;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+ 
+.about-card h3{
+
+    margin-bottom:15px;
+
+    color:var(--accent);
+
+}
+ 
+/* ================= INTERESTS ================= */
+ 
+.interests-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+ 
+.card{
+
+    background:rgba(255,255,255,.05);
+
+    padding:30px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+ 
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 10px 25px rgba(168,85,247,.4);
+
+}
+ 
+.card .icon{
+
+    font-size:3rem;
+
+    margin-bottom:15px;
+
+}
+ 
+/* ================= ACHIEVEMENT ================= */
+ 
+.achievement{
+
+    text-align:center;
+
+}
+ 
+.achievement-box{
+
+    background:linear-gradient(135deg,#7B2FF7,#A855F7);
+
+    padding:50px;
+
+    border-radius:30px;
+
+    max-width:900px;
+
+    margin:auto;
+
+    box-shadow:0 20px 50px rgba(123,47,247,.4);
+
+}
+ 
+.achievement-box h3{
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+
+}
+ 
+/* ================= CONTACT ================= */
+ 
+.contact-box{
+
+    max-width:800px;
+
+    margin:auto;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.05);
+
+    padding:40px;
+
+    border-radius:25px;
+
+}
+ 
+.socials{
+
+    margin-top:25px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+ 
+.socials a{
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:12px 20px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:50px;
+
+    transition:.3s;
+
+}
+ 
+.socials a:hover{
+
+    background:var(--primary);
+
+}
+ 
+/* ================= FOOTER ================= */
+ 
+footer{
+
+    text-align:center;
+
+    padding:30px;
+
+    opacity:.7;
+
+}
+ 
+/* ================= ANIMATIONS ================= */
+ 
+.hidden{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:all 1s ease;
+
+}
+ 
+.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+ 
+/* ================= RESPONSIVE ================= */
+ 
+@media(max-width:900px){
+ 
+.about{
+
+    grid-template-columns:1fr;
+
+}
+ 
+.hero h1{
+
+    font-size:2.8rem;
+
+}
+ 
+nav{
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+ 
+nav ul{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+}
+ 
+</style>
+</head>
+<body>
+ 
+<header>
+<nav>
+<div class="logo">Student<span>Blog</span></div>
+ 
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#interests">Interests</a></li>
+<li><a href="#achievement">Achievement</a></li>
+<li><a href="#contact">Connect</a></li>
+</ul>
+</nav>
+</header>
+ 
+<!-- HERO -->
+ 
+<section class="hero">
+ 
+<div class="hero-content">
+ 
+<h1>
+
+Hello, I'm<br>
+<span class="animated-text">[YOUR NAME]</span>
+</h1>
+ 
+<p>
+
+A passionate student, creator, and lifelong learner who loves exploring new ideas,
+
+building exciting projects, and turning curiosity into innovation.
+</p>
+ 
+<a href="#about" class="hero-btn">Explore My Journey</a>
+ 
+</div>
+ 
+</section>
+ 
+<!-- ABOUT -->
+ 
+<section id="about" class="hidden">
+ 
+<div class="section-title">
+<h2>About Me</h2>
+<p>Who I am beyond grades and achievements.</p>
+</div>
+ 
+<div class="about">
+ 
+<div class="about-card">
+<h3>Student Profile</h3>
+ 
+<p>
+
+🎓 Grade: <b>[YOUR GRADE]</b><br><br>
+ 
+🏫 School: <b>[YOUR SCHOOL]</b><br><br>
+ 
+📚 Favourite Subject: <b>[YOUR FAVOURITE SUBJECT]</b><br><br>
+ 
+🌟 Dream Goal: <b>[YOUR DREAM]</b>
+</p>
+</div>
+ 
+<div class="about-card">
+<h3>My Story</h3>
+ 
+<p>
+
+I'm a curious and ambitious learner who enjoys challenging myself,
+
+discovering creative solutions, and continuously growing.
+
+Whether I'm working on projects, learning new skills, or exploring
+
+my interests, I believe every experience is an opportunity to improve
+
+and make a positive impact.
+</p>
+ 
+</div>
+ 
+</div>
+ 
+</section>
+ 
+<!-- INTERESTS -->
+ 
+<section id="interests" class="hidden">
+ 
+<div class="section-title">
+<h2>My Interests</h2>
+<p>Things that inspire me every day.</p>
+</div>
+ 
+<div class="interests-grid">
+ 
+<div class="card">
+<div class="icon">🤖</div>
+<h3>Robotics</h3>
+<p>Building and programming innovative creations.</p>
+</div>
+ 
+<div class="card">
+<div class="icon">♟️</div>
+<h3>Chess</h3>
+<p>Strategic thinking and problem solving.</p>
+</div>
+ 
+<div class="card">
+<div class="icon">🚀</div>
+<h3>Astrophysics</h3>
+<p>Exploring the mysteries of the universe.</p>
+</div>
+ 
+<div class="card">
+<div class="icon">✍️</div>
+<h3>Writing</h3>
+<p>Expressing ideas through creativity and storytelling.</p>
+</div>
+ 
+</div>
+ 
+</section>
+ 
+<!-- ACHIEVEMENT -->
+ 
+<section id="achievement" class="achievement hidden">
+ 
+<div class="section-title">
+<h2>Achievement Spotlight</h2>
+<p>A project I'm especially proud of.</p>
+</div>
+ 
+<div class="achievement-box">
+ 
+<h3>🏆 Featured Project</h3>
+ 
+<p>
+
+[DESCRIBE YOUR PROJECT OR ACHIEVEMENT HERE]
+ 
+<br><br>
+ 
+This accomplishment reflects my dedication,
+
+creativity, and commitment to learning through
+
+real-world challenges.
+</p>
+ 
+</div>
+ 
+</section>
+ 
+<!-- CONTACT -->
+ 
+<section id="contact" class="hidden">
+ 
+<div class="section-title">
+<h2>Let's Connect</h2>
+<p>I'd love to share ideas and collaborate.</p>
+</div>
+ 
+<div class="contact-box">
+ 
+<h3>Contact Me</h3>
+ 
+<p>
+
+📧 your.email@example.com
+<br><br>
+
+🌐 Future Innovator • Student Leader • Lifelong Learner
+</p>
+ 
+<div class="socials">
+<a href="#">LinkedIn</a>
+<a href="#">GitHub</a>
+<a href="#">Portfolio</a>
+</div>
+ 
+</div>
+ 
+</section>
+ 
+<footer>
+
+© 2026 [YOUR NAME] • Designed with Passion & Creativity
+</footer>
+ 
+<script>
+
+ 
+const observer = new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+ 
+document.querySelectorAll('.hidden').forEach(el=>{
+
+observer.observe(el);
+
+});
+ 
+</script>
+ 
+</body>
+</html>
+ 
