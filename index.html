@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kanshika Manikandan | Future Entrepreneur</title>
+ 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap%27);
+ 
+:root{
+    --navy:#050B18;
+    --dark:#0B1224;
+    --gold:#FFD700;
+    --gold-soft:#FFEB8A;
+    --glass:rgba(255,255,255,0.05);
+    --text:#EAF2FF;
+    --muted:#B5C4E3;
+}
+ 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+ 
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(180deg,#030712,#07111f,#0c1730);
+    color:var(--text);
+    overflow-x:hidden;
+}
+ 
+body::before{
+    content:'';
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background:
+    radial-gradient(circle at 20% 20%, rgba(255,215,0,.12), transparent 20%),
+    radial-gradient(circle at 80% 30%, rgba(255,215,0,.08), transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(255,215,0,.08), transparent 20%);
+    pointer-events:none;
+    z-index:-1;
+}
+ 
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    backdrop-filter:blur(12px);
+    background:rgba(5,11,24,.8);
+    border-bottom:1px solid rgba(255,215,0,.15);
+}
+ 
+nav{
+    max-width:1300px;
+    margin:auto;
+    padding:18px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+ 
+.logo{
+    font-family:'Orbitron',sans-serif;
+    font-size:1.2rem;
+    font-weight:800;
+    color:var(--gold);
+    letter-spacing:2px;
+}
+ 
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+ 
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:.3s;
+}
+ 
+.nav-links a:hover{
+    color:var(--gold);
+}
+ 
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 8%;
+}
+ 
+.hero-content{
+    max-width:1000px;
+}
+ 
+.hero h1{
+    font-family:'Orbitron',sans-serif;
+    font-size:clamp(3rem,8vw,6rem);
+    line-height:1.1;
+    text-transform:uppercase;
+    background:linear-gradient(90deg,var(--gold),#fff6c0,var(--gold));
+    background-size:300%;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:shine 6s linear infinite;
+}
+ 
+@keyframes shine{
+    0%{background-position:0%}
+    100%{background-position:300%}
+}
+ 
+.hero h2{
+    margin-top:20px;
+    font-size:1.4rem;
+    color:var(--gold-soft);
+    min-height:50px;
+    animation:typing 5s infinite;
+}
+ 
+@keyframes typing{
+    0%,100%{opacity:0;}
+    20%,80%{opacity:1;}
+}
+ 
+.hero p{
+    max-width:800px;
+    margin:30px auto;
+    color:var(--muted);
+    font-size:1.1rem;
+    line-height:1.8;
+}
+ 
+.hero-btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:linear-gradient(135deg,var(--gold),#f8c100);
+    color:black;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:700;
+    transition:.4s;
+}
+ 
+.hero-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 25px rgba(255,215,0,.5);
+}
+ 
+section{
+    padding:100px 8%;
+}
+ 
+.section-title{
+    font-family:'Orbitron',sans-serif;
+    text-align:center;
+    margin-bottom:60px;
+    font-size:2.5rem;
+    color:var(--gold);
+}
+ 
+.about{
+    max-width:1100px;
+    margin:auto;
+}
+ 
+.about-box{
+    background:var(--glass);
+    border:1px solid rgba(255,215,0,.15);
+    padding:40px;
+    border-radius:25px;
+    backdrop-filter:blur(12px);
+    line-height:1.9;
+    font-size:1.08rem;
+}
+ 
+.interests-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+ 
+.card{
+    background:var(--glass);
+    border:1px solid rgba(255,215,0,.12);
+    border-radius:25px;
+    padding:35px;
+    text-align:center;
+    transition:.4s;
+}
+ 
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(255,215,0,.2);
+}
+ 
+.card .icon{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+ 
+.card h3{
+    color:var(--gold);
+    margin-bottom:15px;
+}
+ 
+.achievement{
+    max-width:1200px;
+    margin:auto;
+}
+ 
+.spotlight{
+    background:linear-gradient(145deg,
+    rgba(255,215,0,.08),
+    rgba(255,255,255,.03));
+    border:1px solid rgba(255,215,0,.2);
+    border-radius:30px;
+    padding:50px;
+}
+ 
+.spotlight h3{
+    font-family:'Orbitron',sans-serif;
+    color:var(--gold);
+    margin-bottom:25px;
+    font-size:2rem;
+}
+ 
+.spotlight p{
+    line-height:1.9;
+    color:var(--muted);
+}
+ 
+.highlight{
+    color:white;
+    font-weight:600;
+}
+ 
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+ 
+.stat{
+    text-align:center;
+    padding:25px;
+    background:rgba(255,255,255,.03);
+    border-radius:20px;
+}
+ 
+.stat h4{
+    color:var(--gold);
+    font-size:2rem;
+}
+ 
+.contact{
+    text-align:center;
+}
+ 
+.contact-box{
+    max-width:800px;
+    margin:auto;
+    padding:50px;
+    border-radius:30px;
+    background:var(--glass);
+    border:1px solid rgba(255,215,0,.15);
+}
+ 
+.contact p{
+    color:var(--muted);
+    line-height:1.8;
+    margin:20px 0;
+}
+ 
+.footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid rgba(255,215,0,.12);
+    color:#9FB1D7;
+}
+ 
+.fade-in{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 1s ease;
+}
+ 
+.fade-in.show{
+    opacity:1;
+    transform:translateY(0);
+}
+ 
+@media(max-width:768px){
+ 
+.nav-links{
+    gap:15px;
+    font-size:.9rem;
+}
+ 
+.hero h1{
+    font-size:3rem;
+}
+ 
+.section-title{
+    font-size:2rem;
+}
+ 
+.spotlight{
+    padding:30px;
+}
+}
+</style>
+</head>
+ 
+<body>
+ 
+<header>
+<nav>
+<div class="logo">KANSHIKA</div>
+ 
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#interests">Interests</a>
+<a href="#achievement">Achievement</a>
+<a href="#contact">Connect</a>
+</div>
+</nav>
+</header>
+ 
+<section class="hero">
+<div class="hero-content fade-in">
+ 
+<h1>Future Entrepreneur<br>Innovator & Creator</h1>
+ 
+<h2>Grade 7 Student • Dreaming Beyond Limits</h2>
+ 
+<p>
+Welcome to my digital universe. I am <strong>Kanshika Manikandan</strong> from
+Delhi Private School, Sharjah, United Arab Emirates. I love solving challenging
+mathematics problems, creating art, reading novels, building innovative ideas,
+and turning imagination into reality.
+</p>
+ 
+<a href="#about" class="hero-btn">Explore My Journey</a>
+ 
+</div>
+</section>
+ 
+<section id="about" class="about fade-in">
+ 
+<h2 class="section-title">About Me</h2>
+ 
+<div class="about-box">
+<p>
+Hello! I'm <strong>Kanshika Manikandan</strong>, a Grade 7 student at
+<strong>Delhi Private School, Sharjah</strong>. My world is powered by curiosity,
+creativity, and continuous learning.
+</p>
+ 
+<br>
+ 
+<p>
+Mathematics is my favourite subject because I enjoy discovering patterns,
+solving puzzles, and finding elegant solutions to complex problems.
+When I am not exploring numbers, you can find me immersed in novels,
+creating artwork, designing comics, or working on innovative STEM projects.
+</p>
+ 
+<br>
+ 
+<p>
+I believe that every challenge is an opportunity to learn something new.
+My dream is to become an entrepreneur who creates meaningful solutions,
+inspires people, and contributes positively to society through innovation
+and leadership.
+</p>
+</div>
+ 
+</section>
+ 
+<section id="interests">
+ 
+<h2 class="section-title fade-in">My Interests</h2>
+ 
+<div class="interests-grid">
+ 
+<div class="card fade-in">
+<div class="icon">🎨</div>
+<h3>Art & Creativity</h3>
+<p>
+Expressing ideas through artwork and visual storytelling while exploring
+imagination without limits.
+</p>
+</div>
+ 
+<div class="card fade-in">
+<div class="icon">📚</div>
+<h3>Reading Novels</h3>
+<p>
+Discovering new worlds, perspectives and adventures through books that
+expand knowledge and creativity.
+</p>
+</div>
+ 
+<div class="card fade-in">
+<div class="icon">➗</div>
+<h3>Mathematics</h3>
+<p>
+Solving challenging problems, uncovering patterns and developing analytical
+thinking skills.
+</p>
+</div>
+ 
+<div class="card fade-in">
+<div class="icon">🤖</div>
+<h3>Innovation & STEM</h3>
+<p>
+Building ideas, exploring technology and developing impactful solutions
+through science and engineering.
+</p>
+</div>
+ 
+</div>
+ 
+</section>
+ 
+<section id="achievement" class="achievement fade-in">
+ 
+<h2 class="section-title">Achievement Spotlight</h2>
+ 
+<div class="spotlight">
+ 
+<h3>Excellence Across Multiple Fields</h3>
+ 
+<p>
+Kanshika has demonstrated outstanding achievement across
+<span class="highlight">academics, innovation, literature, leadership,
+sports and fine arts.</span>
+</p>
+ 
+<br>
+ 
+<p>
+🏆 First Position winner at the BriBook National Young Authors Fair.<br><br>
+ 
+🏆 First Lego League National Champion, showcasing excellence in STEM and innovation.<br><br>
+ 
+🏆 Distinctions in prestigious Olympiads including VIMC, IMSO and international Mathematics, Science and English Olympiads.<br><br>
+ 
+📖 Published author of two books with a passion for storytelling and communication.<br><br>
+ 
+🎨 Artist and comic creator combining creativity with visual storytelling.<br><br>
+ 
+🔬 Recognized in Frijna interschool competitions and STEM initiatives for innovation and research.<br><br>
+ 
+🎤 Best Delegate award recipient in Model United Nations conferences for leadership, diplomacy and critical thinking.<br><br>
+ 
+🌟 Recognized through VVM and SIF programs for excellence in science and innovation.<br><br>
+ 
+🏊 Competitive swimming medalist demonstrating discipline and perseverance.<br><br>
+ 
+🏎️ Participant in Formula Ethara, gaining valuable experience in engineering, teamwork and technology.
+</p>
+ 
+<div class="stats">
+ 
+<div class="stat">
+<h4>2</h4>
+<p>Published Books</p>
+</div>
+ 
+<div class="stat">
+<h4>🏆</h4>
+<p>National Champion</p>
+</div>
+ 
+<div class="stat">
+<h4>∞</h4>
+<p>Curiosity & Learning</p>
+</div>
+ 
+<div class="stat">
+<h4>2035+</h4>
+<p>Future Entrepreneur Vision</p>
+</div>
+ 
+</div>
+ 
+</div>
+ 
+</section>
+ 
+<section id="contact" class="contact fade-in">
+ 
+<h2 class="section-title">Let's Connect</h2>
+ 
+<div class="contact-box">
+ 
+<h3 style="color:var(--gold);font-family:'Orbitron',sans-serif;">
+Building Tomorrow, Today
+</h3>
+ 
+<p>
+Thank you for visiting my portfolio. I am passionate about innovation,
+entrepreneurship, mathematics, literature, art and creating meaningful impact.
+The future belongs to dreamers who are willing to build it.
+</p>
+ 
+<p>
+📍 Sharjah, United Arab Emirates<br>
+🏫 Delhi Private School, Sharjah<br>
+🎯 Aspiring Entrepreneur
+</p>
+ 
+</div>
+ 
+</section>
+ 
+<footer class="footer">
+© 2026 Kanshika Manikandan • Designed for a Future Innovator
+</footer>
+ 
+<script>
+ 
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+},{
+threshold:0.15
+});
+ 
+document.querySelectorAll('.fade-in').forEach(el=>{
+observer.observe(el);
+});
+ 
+</script>
+ 
+</body>
+</html>
